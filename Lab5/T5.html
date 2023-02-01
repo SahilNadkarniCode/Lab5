@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    let value2 = Number.parseInt(document.querySelector("#in2id").value);
+    let result;
+  
+    switch (operator) {
+        case "+":
+            result = value1 + value2;
+            break;
+        case "-":
+            result = value1 - value2;
+            break;
+        case "*":
+            result = value1 * value2;
+            break;
+        case "/":
+            result = value1 / value2;
+            break;
+  }
+  
+  document.querySelector("#result").innerHTML = result;
+
+
+    </script>
+</head>
+<body>
+    <div class="main">
+    
+        <Button onclick="window.location.href = './index.html'">Task 1</Button>
+        <Button onclick="window.location.href = './T2.html'">Task 2</Button>
+        <Button onclick="window.location.href = './T3.html'">Task 3</Button>
+        <Button onclick="window.location.href = './T4.html'">Task 4</Button>
+        <Button onclick="window.location.href = './T5.html'">Task 5</Button>
+        <Button onclick="window.location.href = './T6.html'">Task 6</Button>
+        <Button onclick="window.location.href = './T7.html'">Task 7</Button>
+    
+    </div>
+    <input type="text" id="in1id">
+    <input type="text" id="in2id">
+    <br><br>
+    <button onclick="performCalculation('+')">+</button>
+    <button onclick="performCalculation('-')">-</button>
+    <button onclick="performCalculation('*')">*</button>
+    <button onclick="performCalculation('/')">/</button>
+    <br><br>
+    Result: <span id="result"></span>
+</body>
+</html>

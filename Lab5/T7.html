@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tipCalculator {
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    }
+
+    input[type="range"] {
+    width: 100%;
+    }
+
+    </style>
+</head>
+<body>
+  <div class="main">
+    
+    <Button onclick="window.location.href = './index.html'">Task 1</Button>
+    <Button onclick="window.location.href = './T2.html'">Task 2</Button>
+    <Button onclick="window.location.href = './T3.html'">Task 3</Button>
+    <Button onclick="window.location.href = './T4.html'">Task 4</Button>
+    <Button onclick="window.location.href = './T5.html'">Task 5</Button>
+    <Button onclick="window.location.href = './T6.html'">Task 6</Button>
+    <Button onclick="window.location.href = './T7.html'">Task 7</Button>
+
+</div>
+    <div id="tipCalculator">
+        <h2>Tip Calculator</h2>
+        <br>
+        <div>
+          Bill Amount:
+          <input type="range" id="billAmount" min="0" max="1000" value="500">
+          <span id="billAmountValue">$500</span>
+        </div>
+        <br>
+        <div>
+          Tip Percentage:
+          <input type="range" id="tipPercentage" min="0" max="100" value="15">
+          <span id="tipPercentageValue">15%</span>
+        </div>
+        <br>
+        <div>
+          Split Among:
+          <input type="range" id="splitAmong" min="1" max="10" value="1">
+          <span id="splitAmongValue">1</span>
+        </div>
+        <br><br>
+        <div id="tipAmount">Tip Amount: $0</div>
+        <div id="totalAmount">Total Amount: $0</div>
+        <div id="amountPerPerson">Amount Per Person: $0</div>
+      </div>
+<script>
+    const billAmountRange = document.getElementById("billAmount");
+const billAmountValue = document.getElementById("billAmountValue");
+const tipPercentageRange = document.getElementById("tipPercentage");
+const tipPercentageValue = document.getElementById("tipPercentageValue");
+const splitAmongRange = document.getElementById("splitAmong");
+const splitAmongValue = document.getElementById("splitAmongValue");
+const tipAmount = document.getElementById("tipAmount");
+const totalAmount = document.getElementById("totalAmount");
+const amountPerPerson = document.getElementById("amountPerPerson");
+
+billAmountRange.addEventListener("input", function() {
+  billAmountValue.innerHTML = "$" + billAmountRange.value;
+  calculateTip();
+});
+
+tipPercentageRange.addEventListener("input", function() {
+  tipPercentageValue.innerHTML = tipPercentageRange.value + "%";
+  calculateTip();
+});
+
+splitAmongRange.addEventListener("input", function() {
+  splitAmongValue.innerHTML = splitAmongRange.value;
+  calculateTip();
+});
+
+function calculateTip() {
+  const billAmount = Number(billAmountRange.value);
+  const tipPercentage = Number(tipPercentageRange.value) / 100;
+  const splitAmong = Number(splitAmongRange.value);
+
+  const calculatedTipAmount = billAmount * tipPercentage;
+  const calculatedTotalAmount = billAmount + calculatedTipAmount;
+  const calculatedAmountPerPerson = calculatedTotalAmount / splitAmong;
+
+  tipAmount.innerHTML = "Tip Amount: $" + calculatedTipAmount.toFixed(2);
+  totalAmount.innerHTML = "Total Amount: $" + calculatedTotalAmount.toFixed
+
+</script>      
+</body>
+</html>
